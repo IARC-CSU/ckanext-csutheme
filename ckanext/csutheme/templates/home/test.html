@@ -1,0 +1,42 @@
+	
+
+	{% extends "page.html" %}
+
+	{% block breadcrumb_content %}
+  		<li class="active">{% link_for _('Test'), 'dataset.search' %}</li>
+	{% endblock %}
+
+	{% block secondary %}
+		<aside class="secondary col-sm-3">
+		  	<div class="module module-narrow module-shallow">
+			  	<h2 class="module-heading">
+				    <i class="fa fa-info-circle"></i>
+				    Data
+			  	</h2>
+			  	<div class="module-content">
+				    <p>
+				       <ul>
+				       		<li>Line 1</li>
+							<li>Line 2</li>
+							<li>Line 3</li>
+							<li>Line 4</li>
+						</ul>
+				    </p>
+			  	</div>
+			</div>
+	  	</aside>
+  	{% endblock %}
+
+	{% block primary %}
+		
+		<div class="primary col-sm-9 col-xs-12" role="main">
+
+			<article class="module">
+			    <div class="module-content">
+			    	<h1 class="page-heading">{% trans %}Lorem ipsum{% endtrans %}</h1>
+			    	<p>Test page</p>
+			    </div>
+			 </article>
+		</div>
+
+	{% endblock %}

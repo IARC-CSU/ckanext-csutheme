@@ -1,0 +1,1 @@
+[CSU CKAN] Invite for {{ site_title }}

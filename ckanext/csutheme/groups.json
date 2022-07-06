@@ -1,0 +1,44 @@
+{
+  "scheming_version": 1,
+  "group_type": "group",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Call for data",
+      "validators": "ignore_missing unicode_safe",
+      "form_attrs": {"data-module": "slug-preview-target"},
+      "form_placeholder": "Any call for data"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode_safe name_validator group_name_validator",
+      "form_snippet": "slug.html",
+      "form_placeholder": "call-for-data"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "A little information about the call for data"
+    },
+    {
+      "field_name": "responsible",
+      "label": "List of emails/Responsible",
+      "form_placeholder": "Enter a list of emails which will be notified (separated by ; ie: email1@domain.fr;email2@domain.com)"
+    },
+    {
+      "field_name": "date_start",
+      "label": "Start date",
+      "preset" : "date" , 
+      "form_placeholder": ""
+    },
+    {
+      "field_name": "end_start",
+      "label": "End date",
+      "preset" : "date" , 
+      "form_placeholder": ""
+    }
+  ]
+}

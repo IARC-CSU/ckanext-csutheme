@@ -1,0 +1,94 @@
+
+	{% extends "page.html" %}
+
+	{% block breadcrumb_content %}
+  		<li class="active">{% link_for _('Sandbox'), 'csutheme.sandbox' %}</li>
+	{% endblock %}
+
+	{% block secondary %}
+		<aside class="secondary col-sm-3">
+		  	<div class="module module-narrow module-shallow">
+			  	<h2 class="module-heading">
+				    <i class="fa fa-info-circle"></i>
+		  			Left zone
+		  		</h2>
+		  	</div>
+		  	<div class="module-content">
+		  		<h4> g (var)</h4>
+		  		<p> 
+		  			<ul>
+		  				{% for g_ in g %}
+		  					<li style="font-style:italic;">=> {{ g_ }}</li>
+		  				{% endfor %}
+		  				<li style="border-top:solid 1px black;">{{ g.author }}</li>
+		  				<li>{{ g.remote_addr }}</li>
+		  				<li>{{ g.action }}</li>
+		  				<li>{{ g.webassets }}
+		  					<ul>
+		  						<li>{{ g.webassets.style }}</li>
+				  				<li>{{ g.webassets.script }}</li>
+				  				<li>{{ g.webassets.included }}</li>
+		  					</ul>
+		  				</li>
+		  				<li>{{ g.__timer }}</li>
+		  				<li>{{ g.debug_toolbar }}</li>
+		  				<li>{{ g.ckan }}</li>
+		  			</ul>
+		  		</p>
+		  	</div>
+	  	</aside>
+  	{% endblock %}
+
+	{% block primary %}
+		
+		<div class="primary col-sm-9 col-xs-12" role="main">
+
+			<article class="module">
+			    <div class="module-content">
+			    	<h1 class="page-heading">
+			    		Right zone
+			    	</h1>
+			    	<p>
+			    		Lorem ipsum
+			    	</p>
+			    	<h3>tmpl_context</h3>
+			    	<p>{{ tmpl_context }}
+			    	</p>
+			    	<h3>request</h3> 
+			    	<p>{{ request }}
+			    	</p>
+			    	<h3>Var injected inside controllers</h3>
+			    	<p>
+			    		custom_array
+			    		<ul>
+			    			{% for v in custom_array %}
+			    				<li>{{ v }}</li>
+			    			{% endfor %}
+			    		</ul>
+			    	</p>
+			    	<p>
+			    		custom_string : {{ custom_string }}
+			    	</p>
+			    	<h3>Read External Rest API</h3>
+			    	<p>
+			    		Cancer sites : 
+			    		<br>
+			    		<ul>
+			    			{% for cancer in globocan_cancers %}
+			    				<li>{{ cancer.label  }}({{ cancer.id }}) = {{ cancer.ICD }}</li>
+			    			{% endfor %}
+			    		</ul>
+			    	</p>
+			    	<h3> Links, current routes ({{ links|length }}) </h3>
+			    	<ul>
+			    		{% for link in links%}	
+			    		<li>{{ link.endpoint }}</li>
+			    		{% endfor %}
+			    	</ul>
+			    	<h3>Url map</h3>
+			    	<p>{{ url_map }}</p>
+			    </div>
+			 </article>
+		</div>
+
+	{% endblock %}

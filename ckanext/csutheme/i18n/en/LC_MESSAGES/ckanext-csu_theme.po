@@ -1,0 +1,77 @@
+# English translations for ckanext-csutheme.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the ckanext-csutheme
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-csutheme 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-05-25 08:21+0000\n"
+"PO-Revision-Date: 2022-05-25 08:21+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: ckanext/csutheme/templates/elections/index.html:5
+#: ckanext/csutheme/templates/elections/index.html:19
+msgid "Elections"
+msgstr "Elections translated"
+
+#: ckanext/csutheme/templates/elections/index.html:21
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, "
+"tellus sit amet tincidunt sollicitudin, sem massa vestibulum augue, vitae "
+"laoreet leo eros non lorem. Maecenas a erat in odio tempor iaculis eget in "
+"ex. Sed gravida velit eget orci consequat finibus. Nullam viverra mollis "
+"aliquet. Aliquam erat volutpat. Sed bibendum quam et mauris semper, sed "
+"vehicula odio cursus. Quisque mattis lacus vel mi euismod, vel porttitor "
+"lectus fringilla. Ut volutpat purus id viverra finibus. Pellentesque quis "
+"fringilla nisi. Suspendisse sit amet fermentum augue. Suspendisse eget elit "
+"ac dolor porttitor accumsan at vitae dui. Morbi aliquam, purus non dapibus "
+"consectetur, nulla mauris interdum risus, quis tincidunt leo ex sit amet "
+"nulla."
+msgstr ""
+"Lorem translated ipsum dolor sit amet, consectetur adipiscing elit. Sed "
+"hendrerit, tellus sit amet tincidunt sollicitudin, sem massa vestibulum "
+"augue, vitae laoreet leo eros non lorem. Maecenas a erat in odio tempor "
+"iaculis eget in ex. Sed gravida velit eget orci consequat finibus. Nullam "
+"viverra mollis aliquet. Aliquam erat volutpat. Sed bibendum quam et mauris "
+"semper, sed vehicula odio cursus. Quisque mattis lacus vel mi euismod, vel "
+"porttitor lectus fringilla. Ut volutpat purus id viverra finibus. "
+"Pellentesque quis fringilla nisi. Suspendisse sit amet fermentum augue. "
+"Suspendisse eget elit ac dolor porttitor accumsan at vitae dui. Morbi "
+"aliquam, purus non dapibus consectetur, nulla mauris interdum risus, quis "
+"tincidunt leo ex sit amet nulla."
+
+#: ckanext/csutheme/templates/home/about.html:5
+msgid "About"
+msgstr "About the portal (en)"
+
+#: ckanext/csutheme/templates/home/about.html:19
+msgid "About CKAN CSU"
+msgstr "About the CSU portal (en)"
+
+#: ckanext/csutheme/templates/home/about.html:21
+msgid ""
+"To fulfil IARC’s mandates from WHO to describe the occurrence of cancer, the"
+" Cancer Surveillance Branch (CSU) systematically collects, analyses, "
+"interprets, and disseminates cancer data and statistics worldwide. CSU "
+"builds on its long-standing expertise and track record in cancer "
+"registration and descriptive epidemiology, aligning its activities with the "
+"evolving global cancer agenda. The key priorities align with IARC’s mission "
+"and vision:"
+msgstr ""
+"To fulfil IARC’s mandates from WHO to describe the occurrence of cancer, the"
+" Cancer Surveillance Branch (CSU) systematically collects, analyses, "
+"interprets, and disseminates cancer data and statistics worldwide. CSU "
+"builds on its long-standing expertise and track record in cancer "
+"registration and descriptive epidemiology, aligning its activities with the "
+"evolving global cancer agenda. The key priorities align with IARC’s mission "
+"and vision:"

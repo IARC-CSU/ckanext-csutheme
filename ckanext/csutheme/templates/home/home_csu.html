@@ -1,0 +1,87 @@
+
+  {% if c.userobj.sysadmin %}
+    <div role="main" class="hero">
+      <div class="container">
+        <p> Layout custom CSU Sys admin </p>
+        <div class="row row1">
+          <div class="col-md-4">
+            {% block promoted %}
+              {% snippet 'home/snippets/promoted.html' %}
+            {% endblock %}
+          </div>
+          <div class="col-md-4">
+            {% block search %}
+              {% snippet 'home/snippets/search.html' %}
+            {% endblock %}
+          </div>
+          <div class="col-md-4">
+            {% snippet 'home/snippets/block_lorem.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="main" class="hero">
+      <div class="container">
+        <div class="row row1">
+          <div class="col-md-4">
+            {% block featured_organization %}
+              {% snippet 'home/snippets/featured_organization.html' %}
+            {% endblock %}
+          </div>
+          <div class="col-md-4">
+            {% block featured_group %}
+              {% snippet 'home/snippets/featured_group.html' %}
+            {% endblock %}
+          </div>
+          <div class="col-md-4">
+            {% block stats %}
+              {% snippet 'home/snippets/stats.html' %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="main" class="hero">
+      <div class="container">
+        <div class="row row1">
+          <div class="col-md-8">
+              {% snippet 'home/snippets/block_gco.html' %}
+          </div>
+          <div class="col-md-4">
+            {% snippet 'home/snippets/block_publications.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+
+    <div role="main">
+      <div class="container">
+        <div class="row row2">
+          <!--<p> Layout custom CSU Editor/registry/standard </p>-->
+          <div class="col-md-4">
+            {% snippet 'home/snippets/block_lorem.html' %}
+          </div>
+          <div class="col-md-4">
+            {% snippet 'home/snippets/promoted.html' %}
+          </div>
+          <div class="col-md-4">
+            {% snippet 'home/snippets/block_publications.html' %}
+          </div>
+        </div>
+      </div>
+      <div role="main" class="hero">
+      <div class="container">
+        <div class="row row1">
+          <div class="col-md-8">
+              {% snippet 'home/snippets/block_gco.html' %}
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  {% endif %}

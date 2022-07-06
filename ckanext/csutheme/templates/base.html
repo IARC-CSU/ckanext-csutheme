@@ -1,0 +1,12 @@
+
+  {% ckan_extends %}
+
+  {% block styles %}
+    {{ super() }}
+    
+    {% block links -%}
+      <link rel="shortcut icon" href="/favicon.ico" />
+    {% endblock -%}
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  {% endblock %}

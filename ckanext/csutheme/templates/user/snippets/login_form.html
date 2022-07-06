@@ -1,0 +1,118 @@
+{#
+Renders the login form.
+
+action        - The url that the form should be submitted to.
+error_summary - A tuple/list of form errors.
+
+Example:
+
+  {% snippet "user/snippets/login_form.html", action=g.login_handler, error_summary=error_summary %}
+
+#}
+{% import 'macros/form.html' as form %}
+
+{% set username_error = true if error_summary %}
+{% set password_error = true if error_summary %}
+
+<!--<h4>Inside snippet</h4>-->
+<form action="{{ action }}" method="post" attr-login="csu-login-form">
+  {{ form.errors(errors=error_summary) }}
+
+  {{ form.input('login', label=_("Username"), id='field-login', value="", error=username_error, classes=["control-medium"]) }}
+
+  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", error=password_error, classes=["control-medium"]) }}
+
+  <div class="form-group ">
+    <div class="controls">
+      <label class="checkbox" for="terms_checkbox">
+        <input id="terms_checkbox" type="checkbox" value="type" onclick="checkTerms(this)">
+        I accept the <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-terms">terms which form a legal contract between me, either an individual or a single entity, and IARC regarding all use of this Portal</a>.
+      </label>
+    </div>
+  </div>
+
+  {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000") }}
+
+  <div class="form-actions">
+    {% block login_button %}
+    <button class="btn btn-primary" type="submit" id="btnLogin" tooltip="tooltip" title="Please accept the terms to log-in" disabled>{{ _('Login') }}</button>
+    {% endblock %}
+  </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Legals & terms</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>The following paragraphs are terms which form a legal contract between you, either an individual or a single entity, (You) and IARC regarding all use of this Portal.</p>
+        <p>BY REGISTERING FOR, LOGGING IN, UPLOADING TO OR DOWNLOADING FROM, MODIFYING OR RETRACTING ANY DATA FROM THIS PORTAL, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD, AND AGREE TO BE BOUND BY, THE FOLLOWING TERMS AND CONDITIONS, INCLUDING ANY ADDITIONAL GUIDELINES AND FUTURE MODIFICATIONS (COLLECTIVELY, THE “TERMS”).</p>
+        <p>
+          <ol>
+             <li>In these Terms, “Data” shall refer to all forms of files and any other information.</li>
+             <li>You have the full legal or full corporate right, power and authority to: register for, log in, upload to or download from, modify or retract Data from (collectively, Use) the Portal. </li>
+             <li>Unless otherwise agreed between You and IARC, regardless of Use, all rights, title and interest in the Data in the Portal shall remain with the provider of Data to the Portal</li>  
+             <li>Any Data that You upload to the Portal that is sensitive or confidential must be marked as Confidential by clicking the checked marked “Confidential ”.</li>
+             <li>You represent and warrant that You have made all reasonable efforts to ensure that any Data You upload to this Portal will not infringe the proprietary rights of any third party and will not violate any acts, laws, by-laws, rules and regulations applicable to the Data. </li>
+             <li>Any Data that you download from the Portal is provided to You on an “as-is” basis. IARC makes no representation or warranty, whether express or implied, with respect to the Data, including any representation or warranty as to the suitability of the Data or the non-infringement of the Data on the proprietary rights of a third party. Any Use of the Data will be at Your sole risk and liability, whether or not You have consented to such Use. </li>
+             <li>Unless otherwise agreed between You and IARC, neither IARC nor You shall use the Data outside of the agreed purpose for the Data.  If a purpose and scope for use of the Data is not clear, please contact the relevant person at IARC prior to any Use of the Data in the Portal.</li>
+             <li>Unless otherwise agreed between You and IARC, neither IARC nor You shall:
+                  <ol type="a">
+                      <li>use the Data for any commercial purposes;</li>
+                      <li>provide or make available the Data for any purpose to a third party; or </li>
+                      <li>attempt to use or disclose the Data in a form that may identify an individual.</li>
+                  </ol>
+             </li><li>Unless otherwise agreed between you and IARC, You and IARC will apply <a href="/include/cin_portal_security_procedures-v1.pdf" target="_blank">the security procedures described here</a> to protect the confidentiality and integrity of any Data You or IARC download from this Portal.  Unless otherwise agreed between You and IARC, no additional obligations will apply with regard to the handling and security of the Data.</li>
+             <li>No Use of Data within the Portal by You or IARC will be construed as a waiver of any of the privileges and immunities enjoyed by IARC, as part of the World Health Organization and the United Nations system, under national or international law, and/or as submitting IARC to any national court jurisdiction.</li>
+             <li>Any dispute between You and IARC relating to the Use of Data in this Portal will, unless amicably settled, be subject to conciliation. In the event of failure of the latter, the dispute will be settled by arbitration. The arbitration will be conducted in accordance with the modalities to be agreed upon by the Parties or, in the absence of agreement, with the rules of arbitration of the International Chamber of Commerce. You and IARC will accept the arbitral award as final. </li>
+          </ol>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="validTerms()">I agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /* $(document).ready(function(){
+    $('#field-login').focus();
+    $('button[tooltip="tooltip"]').tooltip();
+  });*/ 
+
+  function checkLogIn() {
+    var registry = document.getElementById("lblRegistryFolder").innerHTML;
+    if (registry == "") {
+        alert("You must log in first. Fill in the username and password below.");
+        return false;
+    }
+    else {
+        return true;
+    }
+  }
+
+  function validTerms(){
+    document.getElementById("terms_checkbox").checked = true ;
+    checkTerms()
+  }
+
+  function checkTerms() {
+      if (document.getElementById("terms_checkbox").checked == true)
+          document.getElementById("btnLogin").removeAttribute('disabled');
+      else
+          document.getElementById("btnLogin").setAttribute('disabled', 'disabled');
+  }
+
+  window.addEventListener("keydown", function (e) {
+      if (e.which == 27) closeModal();
+  });
+
+</script>

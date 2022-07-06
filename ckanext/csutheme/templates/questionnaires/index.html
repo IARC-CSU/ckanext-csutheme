@@ -1,0 +1,66 @@
+
+	{% extends "page.html" %}
+
+	{% block breadcrumb_content %}
+  		<li class="active">{% link_for _('Questionnaires'), 'csutheme.index_survey' %}</li>
+	{% endblock %}
+
+	{% block secondary %}
+		<aside class="secondary col-sm-3">
+		  	<div class="module module-narrow module-shallow">
+			  	<h2 class="module-heading">
+				    <i class="fa fa-info-circle"></i>
+		  			Informations
+		  		</h2>		  		
+		  	</div>
+		  	<div class="module-content">
+			    <p>
+			      <ul class="std">
+			      	<li>Please click on the questionnaire that you wish to take part in.</li>
+			      	<li>Depending on the questionnaire, you will have an option to complete it in online, download it or upload it.</li>
+			      </ul>
+			    </p>
+			</div>
+	  	</aside>
+  	{% endblock %}
+
+	{% block primary %}
+		
+		<div class="primary col-sm-9 col-xs-12" role="main">
+
+			<article class="module">
+			    <div class="module-content">
+			    	
+			    	<table class="table table-header table-hover table-bordered">
+					    <thead>
+					      <tr>
+					          <th>ID</th>
+					          <th>Project</th>
+					          <th>Launch date</th>
+					          <th>Start date</th>
+					          <th>End date</th>
+					          <th>Status</th>
+					          <th>Count</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      	{% for x in range(10) %}
+						        <tr>
+						        	<td class="media">XXX</td>
+						          	<td>CI5_X12</td>
+						          	<td>2022-05-01</td>
+						          	<td>2022-07-01</td>
+						          	<td>2022-07-31</td>
+						          	<td style="color:green;"><i class="fa fa-spinner" aria-hidden="true"></i> &nbsp; Ongoing</td>
+						          	<td>YY</td>
+						        </tr>
+						    {% endfor %}
+					      
+					    </tbody>
+				  	</table>
+
+			    </div>
+			 </article>
+		</div>
+
+	{% endblock %}

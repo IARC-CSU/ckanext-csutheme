@@ -1,0 +1,70 @@
+<footer class="site-footer">
+  {% if c.userobj.sysadmin %}
+    <img src="/img/sysadmin.png" title="Sys admin" id="img_sysadmin" />
+  {% endif %}
+  <div class="container">
+    {% block footer_content %}
+    <div class="row">
+      {% block footer_nav %}
+      <div class="col-md-3 footer-links">
+          <ul class="list-unstyled">
+            {% block footer_links %}
+              <li>
+                <p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
+              </li>
+            {% endblock %}
+          </ul>
+          <ul class="list-unstyled">
+            {% block footer_links_ckan %}
+              {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+              <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+              <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></li>
+            {% endblock %}
+          </ul>
+      </div>
+      <div class="col-md-3 footer-links">
+          <ul class="list-unstyled">
+            <li><strong>GCO websites</strong></li>
+            <li><a href="https://gco.iarc.fr" target="_blank">The Global Cancer Observatory</a></li>
+            <li><a href="https://gco.iarc.fr/today" target="_blank">Cancer Today</a></li>
+            <li><a href="https://gco.iarc.fr/tomorrow" target="_blank">Cancer Tomorrow</a></li>
+            <li><a href="https://gco.iarc.fr/overtime" target="_blank">Cancer Over Time</a></li>
+          </ul>
+      </div>
+      <div class="col-md-3 footer-links">
+          <ul class="list-unstyled">
+            <li><strong>GCO websites</strong></li>
+            <li><a href="https://gco.iarc.fr/causes" target="_blank">Cancer Causes</a></li>
+            <li><a href="https://gco.iarc.fr/survival/survmark" target="_blank">ICBP SURVMARK-2</a></li>
+            <li><a href="https://gicr.iarc.fr" target="_blank">GICR</a></li>
+            <li><a href="http://www.iacr.com.fr/" target="_blank">IACR</a></li>
+          </ul>
+      </div>
+      {% endblock %}
+      <div class="col-md-3 attribution">
+        {% block footer_attribution %}
+          <ul class="list-unstyled">
+            <li>
+              <strong>Contact</strong>
+              <p>150 Cours Albert Thomas,
+            69372 Lyon CEDEX 08, France</p>
+            </li>
+            <li><a href="mailto:csu@iarc.fr">Contact us</a></li>
+            <li><a href="http://publications.iarc.fr/Terms-Of-Use">Terms of use</a></li>
+            <li><a href="https://www.iarc.fr/privacy-policy/">Privacy Policy</a></li>
+              
+          </ul>
+        {% endblock %}
+        
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+
+  {% block footer_debug %}
+    {% if g.debug %}
+      {% include 'snippets/debug.html' %}
+    {% endif %}
+  {% endblock %}
+</footer>

@@ -1,0 +1,62 @@
+{
+  "scheming_version": 1,
+  "organization_type": "organization",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Name",
+      "validators": "ignore_missing unicode_safe",
+      "form_attrs": {"data-module": "slug-preview-target"},
+      "form_placeholder": "Organization, registry or research center ..."
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode_safe name_validator group_name_validator",
+      "form_snippet": "slug.html",
+      "form_placeholder": "a-registry"
+    },
+    {
+      "field_name": "registry_code",
+      "label": "Registry code",
+      "form_placeholder": "If available, enter a registry code eg. VAT2022"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "A little information about my organization ..."
+    },
+    {
+      "field_name": "url",
+      "label": "Image URL",
+      "form_placeholder": "http://example.com/my-image.jpg"
+    },
+    {
+      "field_name": "address",
+      "label": "Address",
+      "output_validators": "ignore_missing"
+    },
+    {
+      "field_name": "status",
+      "label": "Status",
+      "output_validators": "ignore_missing",
+      "choices": [
+        {
+            "label": "In Progress",
+            "value": "in-progress"
+        },
+        {
+            "label": "Final",
+            "value": "final"
+        }
+      ]
+    },
+    {
+      "field_name": "department_id",
+      "label": "Department ID",
+      "form_placeholder": "e.g. 1042"
+    }
+  ]
+}

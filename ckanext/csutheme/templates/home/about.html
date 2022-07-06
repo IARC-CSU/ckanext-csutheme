@@ -1,0 +1,52 @@
+	
+	{% extends "page.html" %}
+
+	{% block breadcrumb_content %}
+  		<li class="active">{% link_for _('About'), 'home.about' %}</li>
+	{% endblock %}
+
+	{% block secondary %}
+		<aside class="secondary col-sm-3">
+		  	<div class="module module-narrow module-shallow">
+			  	<h2 class="module-heading">
+				    <i class="fa fa-info-circle"></i>
+				    Welcome to the Registries' Portal at IARC.
+			  	</h2>
+			  	<div class="module-content">
+				    <p>
+				       <ul>
+				       		<li>Update Registry Contact</li>
+							<li>Perform File Upload</li>
+							<li>View Your Feedback</li>
+							<li>Questionnaires</li>
+						</ul>
+				    </p>
+			  	</div>
+			</div>
+	  	</aside>
+  	{% endblock %}
+
+	{% block primary %}
+		
+		<div class="primary col-sm-9 col-xs-12" role="main">
+
+			<article class="module">
+			    <div class="module-content">
+			    	<h1 class="page-heading">{% trans %}About CKAN CSU{% endtrans %}</h1>
+			    	<p>
+			    		{% trans %}
+				    	To fulfil IARC’s mandates from WHO to describe the occurrence of cancer, the Cancer Surveillance Branch (CSU) systematically collects, analyses, interprets, and disseminates cancer data and statistics worldwide. CSU builds on its long-standing expertise and track record in cancer registration and descriptive epidemiology, aligning its activities with the evolving global cancer agenda. The key priorities align with IARC’s mission and vision: {% endtrans %}</p>
+				    <p>
+				    	<ul>
+							<li>To ensure that locally recorded high-quality cancer data are available to governments in countries in transition, to inform priorities for national cancer control.</li>
+							<li>To serve as a reference to the global cancer community in the provision of national cancer indicators.</li>
+							<li>To describe and interpret the changing magnitude and the transitional nature of cancer risk profiles around the world.</li>
+							<li>To advocate the health, social, and economic benefits of preventive interventions, through a systematic quantification of their future impact.</li>
+							<li>CSU informs global, regional, and national priorities for cancer control action via dedicated programmes of work in six complementary areas.</li>
+						</ul>
+				    </p>
+			    </div>
+			 </article>
+		</div>
+
+	{% endblock %}
